@@ -1,0 +1,15 @@
+{
+	"testRegex": "((\\.|/*.)(spec))\\.js?$",
+	"setupFilesAfterEnv": [ "<rootDir>/setupTests.js", "jest-localstorage-mock" ],
+	"collectCoverageFrom": [
+		"src/**/*.{js,jsx,ts,tsx}",
+		"!src/**/*.mock.{js,jsx,ts,tsx}",
+		"!<rootDir>/node_modules/",
+		"!src/helpers/*",
+		"!src/index.js",
+		"!src/App.js",
+		"!src/index.js",
+		"!src/serviceWorker.js",
+		"!src/store.js"
+	]
+}
