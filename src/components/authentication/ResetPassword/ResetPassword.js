@@ -4,9 +4,10 @@ import NotificationComponent from '../../notifications/Notification'
 import Loader from '../../shared/Loader';
 
 export default function ConfirmPassword(props) {
+  const token = props.token;
   const initialState = { status: '', data: '', dataError: null }
-  const [credentials, updateCeredentials] = useState({ token: props.token });
-  const [isLoading, setLoading] = useState(false);
+  const [credentials, updateCeredentials] = useState({ });
+  const [isLoading, setIsLoading] = useState(false);
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -41,23 +42,20 @@ export default function ConfirmPassword(props) {
     updateCeredentials({ ...credentials, [name]: value });
   }
 
-  const resetPassword = (e) => {
+  const resetPassword = async (e) => {
     e.preventDefault();
-    dispatch({})
-    setLoading(true)
+    await setIsLoading(true)
     dispatch({ type: 'RESET_CLEAR' });
-    if (credentials.password !== credentials.confirmPassword) {
+    if (credentials.password !== credentials.password_confirmation) {
       dispatch({ type: 'RESET_FAIL', payload: 'Passwords Do Not Match' })
-      setLoading(false)
+      setIsLoading(false)
     } else {
-      const passwordToken = { token: credentials.token, password: credentials.password }
-      Axios.post('/auth/password_reset/confirm/', { ...passwordToken }).then((response) => {
-        dispatch({ type: 'RESET_SUCCESS', payload: 'Successfully changed your password. You may proceed to log in.' })
-        setLoading(false)
+      Axios.post(`api/auth/reset_password/confirm/${token}`, {...credentials}).then((response) => {
+        dispatch({ type: 'RESET_SUCCESS', payload: response.data.message })
+        setIsLoading(false)
       }).catch((error) => {
-        const errorEntries = Object.entries(error.response.data);
-        dispatch({ type: 'RESET_FAIL', payload: errorEntries[0][1] })
-        setLoading(false)
+        dispatch({ type: 'RESET_FAIL', payload: error.response.data.message})
+        setIsLoading(false)
       })
     }
   }
@@ -115,10 +113,10 @@ export default function ConfirmPassword(props) {
                         </div>
                         <div className="form-group label-floating is-empty">
                           <label className="control-label">Confirm Password</label>
-                          <input className="form-control" placeholder="" name="confirmPassword" data-test="password-confirm" type="password" onChange={(e) => handleChange(e)} required />
+                          <input className="form-control" placeholder="" name="password_confirmation" data-test="password-confirm" type="password" onChange={(e) => handleChange(e)} required />
                         </div>
                         <button href="/" className="btn btn-purple btn-lg full-width" type="submit" data-test="submitButton">
-                          Verify Account
+                          Reset Password
                           </button>
                       </div>
                       <div className="or"></div>

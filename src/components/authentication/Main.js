@@ -25,7 +25,7 @@ export default function Main() {
           <div className="row display-flex">
             <div className="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
               <div className="landing-content">
-                <h1>Welcome to the largest P.V.E communications hub in the world!</h1>
+                <h1>Welcome a P.V.E communications hub!</h1>
                 <p>
                   Please complete your registration here. All accounts are moderated and approved before they become active.
                   Please use the email address that you communicate with iDove using inorder to register

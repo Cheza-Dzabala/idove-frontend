@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
 
@@ -13,135 +14,146 @@ export default function Menu() {
     <>
       <div className={`fixed-sidebar ${panelStatus ? 'open' : ''}`}>
         <div className="fixed-sidebar-left sidebar--small" id="sidebar-left">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <div className="img-wrap">
-              <img src="img/logo.png" alt="Olympus" />
+              <img src="/img/logo.png" alt="idove" />
             </div>
-          </a>
+          </Link>
           <div className="mCustomScrollbar" data-mcs-theme="dark">
             <ul className="left-menu">
               <li>
-                <a href="/" className="js-sidebar-open" data-test="hamburger" onClick={(e) => modifyPanel(e)}>
-                  <svg className="olymp-popup-right-arrow left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="OPEN MENU"><use href="svg-icons/sprites/icons.svg#olymp-popup-right-arrow"></use></svg>
-                </a>
+                <Link to="/" className="js-sidebar-open" data-test="hamburger" onClick={(e) => modifyPanel(e)}>
+                  <svg className="olymp-popup-right-arrow left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="OPEN MENU"><use href="/svg-icons/sprites/icons.svg#olymp-popup-right-arrow"></use></svg>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-menu-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="HOME"><use href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
-                </a>
+                <Link to="/">
+                  <svg className="olymp-menu-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="HOME"><use href="/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+                </Link>
               </li>
 
               <li>
-                <a href="/">
-                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-                </a>
+                <Link to="/newsfeed">
+                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
-                </a>
+                <Link to="/projects">
+                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="/svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
-                </a>
+                <Link to="/forums">
+                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="/svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="YOUR GROUPS"><use href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-                </a>
+                <Link to="/users">
+                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="USERS"><use href="/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-calendar-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CALENDAR AND EVENTS"><use href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-                </a>
+                <Link to="/groups">
+                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="YOUR GROUPS"><use href="/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+                </Link>
+              </li >
+              {/* <li>
+                <Link to="/">
+                  <svg className="olymp-calendar-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CALENDAR AND EVENTS"><use href="/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-                </a>
+                <Link to="/">
+                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                </Link>
               </li >
 
               <li>
-                <a href="/">
-                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
-                </a>
-              </li >
+                <Link to="/">
+                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="/svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+                </Link>
+              </li > */}
             </ul >
           </div >
         </div >
 
         <div className="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <div className="title-block">
               <h6 className="logo-title">iDove Connection Hub</h6>
             </div>
-          </a>
+          </Link>
 
           <div className="mCustomScrollbar" data-mcs-theme="dark">
             <ul className="left-menu">
               <li>
-                <a href="/" className="js-sidebar-open" data-test="hamburger-close" onClick={(e) => modifyPanel(e)}>
-                  <svg className="olymp-close-icon left-menu-icon"><use href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+                <Link to="/" className="js-sidebar-open" data-test="hamburger-close" onClick={(e) => modifyPanel(e)}>
+                  <svg className="olymp-close-icon left-menu-icon"><use href="/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
                   <span className="left-menu-title">Collapse Menu</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-menu-icon  left-menu-icon"><use href="svg-icons/sprites/icons.svg#olymp-menu-icon "></use></svg>
+                <Link to="/">
+                  <svg className="olymp-menu-icon  left-menu-icon"><use href="/svg-icons/sprites/icons.svg#olymp-menu-icon "></use></svg>
                   <span className="left-menu-title">Home</span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="/">
-                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+                <Link to="/newsfeed">
+                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
                   <span className="left-menu-title">Newsfeed</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
+                <Link to="/projects">
+                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="/svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
                   <span className="left-menu-title">Create Project</span>
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
+                <Link to="/forums">
+                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="/svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
                   <span className="left-menu-title">Forums</span>
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FRIEND GROUPS"><use href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+                <Link to="/users">
+                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="USERS"><use href="/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                  <span className="left-menu-title">Users</span>
+                </Link>
+              </li >
+              <li>
+                <Link to="/groups">
+                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FRIEND GROUPS"><use href="/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
                   <span className="left-menu-title">Your Groups</span>
-                </a>
+                </Link>
               </li >
-              <li>
-                <a href="/">
+              {/* <li>
+                <Link to="/">
                   <span className="author-thumb">
                     <div className="label-avatar bg-events">2</div>
                   </span>
                   <svg className="olymp-calendar-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CALENDAR AND EVENTS">
-                    <use href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+                    <use href="/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 
                   <span className="left-menu-title">Calendar and Events</span>
 
 
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                <Link to="/">
+                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
                   <span className="left-menu-title">Community Badges</span>
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+                <Link to="/">
+                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="/svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
                   <span className="left-menu-title">Account Stats</span>
-                </a>
-              </li >
+                </Link>
+              </li > */}
             </ul >
 
             <div className="profile-completion">
@@ -156,7 +168,7 @@ export default function Menu() {
                 </div>
               </div>
 
-              <span>Complete <a href="/">your profile</a> so people and organizations can get involved!</span>
+              <span>Complete<Link to="/">your profile</Link> so people and organizations can get involved!</span>
 
             </div>
           </div >
@@ -164,79 +176,79 @@ export default function Menu() {
       </div >
       <div className={`fixed-sidebar fixed-sidebar-responsive ${panelStatus ? 'open' : ''}`}>
         <div className="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
-          <a href="/" className="logo js-sidebar-open" onClick={(e) => modifyPanel(e)}>
+          <Link to="/" className="logo js-sidebar-open" onClick={(e) => modifyPanel(e)}>
             <img src="img/logo.png" alt="Olympus" />
-          </a>
+          </Link>
         </div>
         <div className="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <div className="title-block">
-              <h6 className="logo-title">iDove Connection Hub</h6>
+              <h6 className="logo-title">iGNITE</h6>
             </div>
-          </a>
+          </Link>
           <div className="mCustomScrollbar" data-mcs-theme="dark">
             <ul className="left-menu">
               <li>
-                <a href="/" className="js-sidebar-open" onClick={(e) => modifyPanel(e)}>
-                  <svg className="olymp-close-icon left-menu-icon"><use href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+                <Link to="/" className="js-sidebar-open" onClick={(e) => modifyPanel(e)}>
+                  <svg className="olymp-close-icon left-menu-icon"><use href="/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
                   <span className="left-menu-title">Collapse Menu</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-menu-icon  left-menu-icon"><use href="svg-icons/sprites/icons.svg#olymp-menu-icon "></use></svg>
+                <Link to="/">
+                  <svg className="olymp-menu-icon  left-menu-icon"><use href="/svg-icons/sprites/icons.svg#olymp-menu-icon "></use></svg>
                   <span className="left-menu-title">Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+                <Link to="/newsfeed">
+                  <svg className="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="NEWSFEED"><use href="/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
                   <span className="left-menu-title">Newsfeed</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
+                <Link to="/projects">
+                  <svg className="olymp-accordion-open-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CREATE PROJECT"><use href="/svg-icons/sprites/icons.svg#olymp-accordion-open-icon"></use></svg>
                   <span className="left-menu-title">Create Project</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
+                <Link to="/forums">
+                  <svg className="olymp-status-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FORUMS"><use href="/svg-icons/sprites/icons.svg#olymp-status-icon"></use></svg>
                   <span className="left-menu-title">Forums</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
-                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FRIEND GROUPS"><use href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+                <Link to="/">
+                  <svg className="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FRIEND GROUPS"><use href="/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
                   <span className="left-menu-title">Your Groups</span>
-                </a>
+                </Link>
               </li >
-              <li>
-                <a href="/">
+              {/* <li>
+                <Link to="/">
                   <span className="author-thumb">
                     <div className="label-avatar bg-events">2</div>
                   </span>
                   <svg className="olymp-calendar-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="CALENDAR AND EVENTS">
-                    <use href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+                    <use href="/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 
                   <span className="left-menu-title">Calendar and Events</span>
 
 
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                <Link to="/">
+                  <svg className="olymp-badge-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Community Badges"><use href="/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
                   <span className="left-menu-title">Community Badges</span>
-                </a>
+                </Link>
               </li >
               <li>
-                <a href="/">
-                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+                <Link to="/">
+                  <svg className="olymp-stats-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="Account Stats"><use href="/svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
                   <span className="left-menu-title">Account Stats</span>
-                </a>
-              </li >
+                </Link>
+              </li > */}
             </ul >
 
             <div className="profile-completion">
@@ -251,7 +263,7 @@ export default function Menu() {
                 </div>
               </div>
 
-              <span>Complete <a href="/">your profile</a> so people and organizations can get involved!</span>
+              <span>Complete<Link to="/">your profile</Link> so people and organizations can get involved!</span>
 
             </div>
           </div >
