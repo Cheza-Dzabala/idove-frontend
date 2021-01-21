@@ -119,9 +119,208 @@ Description: "HTML-template"
 
 
 
+  
 -------------------------------------------------------------------*/
 /*------------- #THEME-STYLES --------------*/
 /*------------- #VARIABLES --------------*/
+
+@import "trix.css";
+
+.chat-widgets {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+  position: fixed;
+  padding: 0 20vw;
+  bottom: 0;
+}
+
+.chat-box-olympus {
+  display: flex;
+  justify-content: right;
+  flex-direction: row-reverse;
+  bottom: 0;
+  position: fixed;
+  margin-left: 70vw;
+  z-index: 10;
+}
+.react-tel-input .form-control+div:before {
+  content: none !important;
+}
+
+.container{max-width:1170px; margin:auto;}
+img{ max-width:100%;}
+.inbox_people {
+  background: #f8f8f8 none repeat scroll 0 0;
+  float: left;
+  overflow: hidden;
+  width: 40%; border-right:1px solid #c4c4c4;
+}
+.inbox_msg {
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+.top_spac{ margin: 20px 0 0;}
+
+
+.recent_heading {float: left; width:40%;}
+.srch_bar {
+  display: inline-block;
+  text-align: right;
+  width: 60%; padding:
+}
+.headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
+
+.recent_heading h4 {
+  color: #05728f;
+  font-size: 21px;
+  margin: auto;
+}
+.srch_bar input{ border:1px solid #cdcdcd; border-width:0 0 1px 0; width:80%; padding:2px 0 4px 6px; background:none;}
+.srch_bar .input-group-addon button {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  padding: 0;
+  color: #707070;
+  font-size: 18px;
+}
+.srch_bar .input-group-addon { margin: 0 0 0 -27px;}
+
+.chat_ib h5{ font-size:15px; color:#464646; margin:0 0 8px 0;}
+.chat_ib h5 span{ font-size:13px; float:right;}
+.chat_ib p{ font-size:14px; color:#989898; margin:auto}
+.chat_img {
+  float: left;
+  width: 11%;
+}
+.chat_ib {
+  float: left;
+  padding: 0 0 0 15px;
+  width: 88%;
+}
+
+.chat_people{ overflow:hidden; clear:both;}
+.chat_list {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+.inbox_chat { height: 550px; overflow-y: scroll;}
+
+.active_chat{ background:#ebebeb;}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+ }
+ .received_withd_msg p {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #646464;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+}
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.received_withd_msg { width: 57%;}
+.mesgs {
+  float: left;
+  padding: 30px 15px 0 25px;
+  width: 60%;
+}
+
+ .sent_msg p {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0; color:#fff;
+  padding: 5px 10px 5px 12px;
+  width:100%;
+}
+.outgoing_msg{ overflow:hidden; margin:26px 0 26px;}
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #4c4c4c;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.type_msg {border-top: 1px solid #c4c4c4;position: relative;}
+.msg_send_btn {
+  background: #05728f none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  height: 33px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: 33px;
+}
+.messaging { padding: 0 0 50px 0;}
+.msg_history {
+  height: 516px;
+  overflow-y: auto;
+}
+
+.trixy {
+  min-height: 150px;
+  border: 1px solid #edf2f6;
+  margin-top: 5px;
+}
+
+.react-tel-input .form-control{
+  width: 100%;
+  height: 20px;
+}
+
+input[type="tel"].form-control{
+  width: 100%;
+}
+.date-input {
+  height: 20px;
+}
+.editor-class {
+  border: 1px solid #EDF0F8;
+  padding: 0 5px;
+  color: #585A6A;
+  height: 150px;
+}
+
+.input-instructions {
+  color: #515365;
+}
+
+.drag-drop-images {
+  border: 1px solid #E6ECF5;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+
+}
 /*------------- #HEADER --------------*/
 .header {
   height: 70px;
@@ -356,7 +555,8 @@ Description: "HTML-template"
     height: 24px;
     width: 24px; }
   .control-icon .mCustomScrollbar {
-    overflow: hidden;
+    overflow: scroll;
+    overflow-y: scroll;
     max-height: 300px; }
   .control-icon .ps > .ps__scrollbar-y-rail, .control-icon .ps:hover > .ps__scrollbar-y-rail {
     left: 0;
@@ -626,7 +826,7 @@ Description: "HTML-template"
     background-color: #05303A; }
   .tab-content-responsive .mCustomScrollbar {
     max-height: calc(100vh - 140px);
-    overflow-y: auto !important; }
+    overflow-y: scroll !important; }
 
 .header-menu {
   float: left;
@@ -3899,7 +4099,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
       color: #515365; }
   .fixed-sidebar .mCustomScrollbar {
     max-height: calc(100vh - 70px);
-    overflow: hidden; }
+    overflow: scroll; }
   .fixed-sidebar .ps > .ps__scrollbar-y-rail, .fixed-sidebar .ps:hover > .ps__scrollbar-y-rail {
     opacity: 0;
     z-index: -1;
@@ -5099,7 +5299,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 .chat-field {
   border-left: 1px solid #e6ecf5; }
   .chat-field .mCustomScrollbar {
-    overflow: hidden;
+    overflow: scroll;
     max-height: 450px; }
   .chat-field .ps > .ps__scrollbar-y-rail, .chat-field .ps:hover > .ps__scrollbar-y-rail {
     opacity: 0;
@@ -5330,7 +5530,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   .popup-chat .modal-content {
     border: 0; }
   .popup-chat .mCustomScrollbar {
-    overflow: hidden;
+    overflow: scroll !important;
     max-height: 350px; }
   .popup-chat .ps > .ps__scrollbar-y-rail, .popup-chat .ps:hover > .ps__scrollbar-y-rail {
     opacity: 0;
@@ -5374,16 +5574,17 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
     overflow: hidden;
     padding: 9px 25px; }
     .popup-chat .chat-message-field li:last-child {
-      margin-bottom: 40px; }
-    .popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
+      margin-bottom: 40px; 
+    }
+    .popup-chat .chat-message-field .sent .chat-message-item {
       background-color: #7c5ac2;
       color: #fff; }
-    .popup-chat .chat-message-field li:nth-child(2n) .author-thumb {
+    .popup-chat .chat-message-field .author-thumb.sent {
       float: right; }
-    .popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
+    .popup-chat .chat-message-field  .chat-message-item.sent  {
       float: right; }
-    .popup-chat .chat-message-field li:nth-child(2n) .notification-event {
-      float: right;
+    .popup-chat .chat-message-field   .notification-event.sent{
+      float: right !important;
       padding-left: 0;
       padding-right: 10px; }
   .popup-chat .add-options-message {
@@ -5424,7 +5625,7 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   z-index: 999;
   max-height: 70vh; }
   .popup-chat-responsive .mCustomScrollbar {
-    overflow: hidden;
+    overflow: scroll;
     max-height: 150px; }
   .popup-chat-responsive.open-chat {
     bottom: auto;
@@ -5627,7 +5828,7 @@ figure {
     text-align: center;
     z-index: 20; }
   .blog-post-popup .mCustomScrollbar {
-    overflow: hidden;
+    overflow: scroll;
     max-height: 365px; }
   .blog-post-popup .ps > .ps__scrollbar-y-rail, .blog-post-popup .ps:hover > .ps__scrollbar-y-rail {
     display: none; }
@@ -9508,6 +9709,18 @@ ol ol li {
 .c-twitter {
   color: #38bff1; }
 
+.c-instagram {
+  color: #C13584; }
+
+.c-youtube {
+  color: #FF0000; }
+
+.c-linkedin {
+  color: #2867B2; }
+
+.c-website {
+  color: #004526; }
+
 .c-dribbble {
   color: #f74881; }
 
@@ -11171,7 +11384,7 @@ select.selectpicker {
   top: 8px;
   font-size: 11px;
   line-height: 1.42857;
-  z-index: 9; }
+  z-index: 1; }
 
 .bootstrap-select.style-2 > .dropdown-toggle {
   border: none;
@@ -14987,3 +15200,6 @@ input[type=checkbox] {
 
 .swiper-container.auto-height .swiper-slide {
   height: auto !important; }
+
+
+

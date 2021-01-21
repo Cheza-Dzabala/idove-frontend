@@ -5,7 +5,7 @@ import ResetPasswordModal from '../../modals/ResetPasswordModal';
 import { validateEmail } from '../../../helpers/regexTests';
 import Loader from '../../shared/Loader';
 import Axios from '../../../helpers/Axios';
-import { saveToken } from '../../../helpers/AuthHelpers';
+import { saveToken, saveUserData, saveUserProfile } from '../../../helpers/AuthHelpers';
 
 const Login = (props) => {
   let credentials = {};
@@ -29,7 +29,11 @@ const Login = (props) => {
         }
       }
       default: {
-        return { ...state }
+        return {
+          status: '',
+          data: '',
+          dataError: null
+        }
       }
     }
   }
@@ -41,14 +45,16 @@ const Login = (props) => {
     if (state.status === 'error') {
       setShowLoginError(true)
       setLoading(false)
-    } else {
-      setShowLoginError(false)
+    }
+    if (state.status === '') {
+      setShowLoginError(false);
+      setLoading(false)
     }
   }, [state.status])
 
   const attemptLogin = (e) => {
-    dispatch({})
     e.preventDefault();
+    dispatch({})
     setLoading(true);
     if (validateEmail(loginData.email)) {
       credentials = {
@@ -61,14 +67,19 @@ const Login = (props) => {
         password: loginData.password
       }
     }
-    Axios.post('/auth/login/', { ...credentials })
+    Axios.post('/api/login/', { ...credentials })
       .then((response) => {
         const { data } = response;
-        saveToken(data.token)
+        saveToken(data.access_token);
+        saveUserData(data.user_data);
+        if (data.user_profile.length > 0) {
+          saveUserProfile(data.user_profile);
+        }
         dispatch({ type: 'LOGIN_SUCCESS', payload: data });
       })
-      .catch((error) => {
-        dispatch({ type: 'LOGIN_ERROR', payload: error.response.data.detail })
+      .catch(({ response: { data } }) => {
+        console.log(data);
+        dispatch({ type: 'LOGIN_ERROR', payload: data.message })
       });
   }
 
@@ -87,8 +98,8 @@ const Login = (props) => {
             <div className="row">
               <div className="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div className="form-group label-floating is-empty">
-                  <label className="control-label">Username or Email</label>
-                  <input className="form-control" placeholder="" data-test="email" id="email" name="email" type="text" onChange={(e) => handleChange(e)} required />
+                  <label className="control-label">Email</label>
+                  <input className="form-control" placeholder="" data-test="email" id="email" name="email" type="email" onChange={(e) => handleChange(e)} required />
                 </div>
                 <div className="form-group label-floating is-empty">
                   <label className="control-label">Your Password</label>
@@ -97,7 +108,7 @@ const Login = (props) => {
                 <div className="remember">
                   <div className="checkbox">
                     <label className="blue">
-                      <input name="optionsCheckboxes" type="checkbox" />
+                      <input name="remember_me" type="checkbox" onChange={(e) => handleChange(e)} />
                       Remember Me
                 </label>
                   </div>

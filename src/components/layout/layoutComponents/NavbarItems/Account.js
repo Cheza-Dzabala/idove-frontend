@@ -1,5 +1,7 @@
 import React from 'react'
-import { userData } from '../../../../helpers/AuthHelpers';
+import { Link } from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
+import { userData, userProfile } from '../../../../helpers/AuthHelpers';
 
 export default () => {
   const styles = {
@@ -9,10 +11,12 @@ export default () => {
   }
 
   const basicInfo = userData();
+  const profile = userProfile();
+
   return (
     <div className="author-page author vcard inline-items more">
       <div className="author-thumb">
-        <img alt="author" className="avatar" src={basicInfo.profilePicture ? basicInfo.profilePicture : 'svg-icons/user.svg'} />
+        <Avatar alt="profile_image" src={(profile && profile.avatar) ? profile.avatar : '/svg-icons/user.svg'} />
         <span className="icon-status away"></span>
         <div className="more-dropdown more-with-triangle">
           <div className="mCustomScrollbar" data-mcs-theme="dark">
@@ -21,14 +25,14 @@ export default () => {
             </div>
             <ul className="account-settings">
               <li>
-                <a href="/profile">
-                  <svg className="olymp-menu-icon"><use href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+                <Link to="/dashboard/profile">
+                  <svg className="olymp-menu-icon"><use href="/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
                   <span>Profile Settings</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="/logout">
-                  <svg className="olymp-logout-icon"><use href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+                  <svg className="olymp-logout-icon"><use href="/svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
                   <span>Log Out</span>
                 </a>
               </li>
@@ -93,7 +97,7 @@ export default () => {
       </div>
       <span className="author-name fn" style={styles.caretStyle}>
         <div className="author-title">
-          {basicInfo.username} <svg className="olymp-dropdown-arrow-icon"><use href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+          {basicInfo.username} <svg className="olymp-dropdown-arrow-icon"><use href="/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
         </div>
         <span className="author-subtitle">....</span>
       </span >
