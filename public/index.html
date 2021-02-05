@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/fav.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="iDove online platform for iDovers all over the world!" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- <script src="https://js.pusher.com/6.0/pusher.min.js"></script> -->
 
-    <!-- Main Styles CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap-reboot.css">
+  <link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/Bootstrap/dist/css/bootstrap-grid.css">
 
-    <!-- Main Font -->
-     <script src="js/webfontloader.min.js"></script>
-      <script>
-          WebFont.load({
-              google: {
-                  families: ['Roboto:300,400,500,700:latin']
-              }
-          });
-      </script>
+  <!-- Main Styles CSS -->
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts.css">
 
-    <!--
+  <!-- Main Font -->
+  <script src="/js/webfontloader.min.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Roboto:300,400,500,700:latin']
+      }
+    });
+  </script>
+
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -44,12 +59,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>iDove</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>iDove</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -60,44 +77,58 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <!-- JS Scripts -->
-  <script src="js/jquery-3.2.1.js"></script>
-  <script src="js/jquery.appear.js"></script>
-  <script src="js/jquery.mousewheel.js"></script>
-  <script src="js/perfect-scrollbar.js"></script>
-  <script src="js/jquery.matchHeight.js"></script>
-  <script src="js/svgxuse.js"></script>
-  <script src="js/imagesloaded.pkgd.js"></script>
-  <script src="js/Headroom.js"></script>
-  <script src="js/velocity.js"></script>
-  <script src="js/ScrollMagic.js"></script>
-  <script src="js/jquery.waypoints.js"></script>
-  <script src="js/jquery.countTo.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/material.min.js"></script>
-  <script src="js/bootstrap-select.js"></script>
-  <script src="js/smooth-scroll.js"></script>
-  <script src="js/selectize.js"></script>
-  <script src="js/swiper.jquery.js"></script>
-  <script src="js/moment.js"></script>
-  <script src="js/daterangepicker.js"></script>
-  <script src="js/simplecalendar.js"></script>
-  <script src="js/fullcalendar.js"></script>
-  <script src="js/isotope.pkgd.js"></script>
-  <script src="js/ajax-pagination.js"></script>
-  <script src="js/Chart.js"></script>
-  <script src="js/circle-progress.js"></script>
-  <script src="js/loader.js"></script>
-  <script src="js/run-chart.js"></script>
-  <script src="js/jquery.magnific-popup.js"></script>
-  <script src="js/jquery.gifplayer.js"></script>
-  <script src="js/mediaelement-and-player.js"></script>
-  <script src="js/mediaelement-playlist-plugin.min.js"></script>
-  <script src="js/sticky-sidebar.js"></script>
+  <script>
 
-  <script src="js/base-init.js"></script>
-  <script defer src="fonts/fontawesome-all.js"></script>
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
 
-  <script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
-  </body>
+    // var pusher = new Pusher('ded89e3b6c01c92ae294', {
+    //   cluster: 'ap4'
+    // });
+
+    // var channel = pusher.subscribe('my-channel');
+    // channel.bind('my-event', function (data) {
+    //   alert(JSON.stringify(data));
+    // });
+  </script>
+  <script src="/js/jquery-3.2.1.js"></script>
+  <script src="/js/jquery.appear.js"></script>
+  <script src="/js/jquery.mousewheel.js"></script>
+  <script src="/js/perfect-scrollbar.js"></script>
+  <script src="/js/jquery.matchHeight.js"></script>
+  <script src="/js/svgxuse.js"></script>
+  <script src="/js/imagesloaded.pkgd.js"></script>
+  <script src="/js/Headroom.js"></script>
+  <script src="/js/velocity.js"></script>
+  <script src="/js/ScrollMagic.js"></script>
+  <script src="/js/jquery.waypoints.js"></script>
+  <script src="/js/jquery.countTo.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/material.min.js"></script>
+  <script src="/js/bootstrap-select.js"></script>
+  <script src="/js/smooth-scroll.js"></script>
+  <script src="/js/selectize.js"></script>
+  <script src="/js/swiper.jquery.js"></script>
+  <script src="/js/moment.js"></script>
+  <script src="/js/daterangepicker.js"></script>
+  <script src="/js/simplecalendar.js"></script>
+  <script src="/js/fullcalendar.js"></script>
+  <script src="/js/isotope.pkgd.js"></script>
+  <script src="/js/ajax-pagination.js"></script>
+  <script src="/js/Chart.js"></script>
+  <script src="/js/circle-progress.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="/js/run-chart.js"></script>
+  <script src="/js/jquery.magnific-popup.js"></script>
+  <script src="/js/jquery.gifplayer.js"></script>
+  <script src="/js/mediaelement-and-player.js"></script>
+  <script src="/js/mediaelement-playlist-plugin.min.js"></script>
+  <script src="/js/sticky-sidebar.js"></script>
+
+  <script src="/js/base-init.js"></script>
+  <script defer src="/fonts/fontawesome-all.js"></script>
+
+  <script src="/Bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
 </html>

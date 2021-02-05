@@ -17,7 +17,7 @@ const ResetPasswordModal = () => {
       case 'EMAIL_REQUEST_FAIL':
         return {
           status: 'error',
-          dataError: action.payload
+          dataError: 'Something went wrong'
         };
       case 'EMAIL_REQUEST_CLEAR':
         return {
@@ -44,12 +44,12 @@ const ResetPasswordModal = () => {
     e.preventDefault();
     setLoading(true);
     dispatch({ type: 'EMAIL_REQUEST_CLEAR' })
-    Axios.post('/auth/password_reset/', { ...email }).then((response) => {
+    Axios.post('/api/auth/reset_password', { ...email }).then((response) => {
       dispatch({ type: 'EMAIL_REQUEST_SUCCESS' })
       setLoading(false);
     }).catch((error) => {
-      const errorEntries = Object.entries(error.response.data);
-      dispatch({ type: 'EMAIL_REQUEST_FAIL', payload: errorEntries[0][1] })
+      console.log('Error::', error.response);
+      dispatch({ type: 'EMAIL_REQUEST_FAIL' })
       setLoading(false);
     })
   }

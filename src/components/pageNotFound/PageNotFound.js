@@ -8,7 +8,7 @@ export default function PageNotFound() {
           <div className="row">
             <div className="col col-xl-6 m-auto col-lg-6 col-md-12 col-sm-12 col-12">
               <div className="page-404-content">
-                <img src="img/404.png" alt="page not found" />
+                <img src="/img/404.png" alt="page not found" />
                 <div className="crumina-module crumina-heading align-center">
                   <h2 className="h1 heading-title">A <span className="c-primary">wild ghost</span> appears! Sadly, not what you were looking for...</h2>
                   <p className="heading-text">Sorry! The page you were looking for has been moved or doesn’t exist.
