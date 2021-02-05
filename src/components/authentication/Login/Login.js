@@ -77,9 +77,11 @@ const Login = (props) => {
         }
         dispatch({ type: 'LOGIN_SUCCESS', payload: data });
       })
-      .catch(({ response: { data } }) => {
-        console.log(data);
-        dispatch({ type: 'LOGIN_ERROR', payload: data.message })
+      .catch((error) => {
+        // console.log(data);
+
+        console.log(error.response);
+        dispatch({ type: 'LOGIN_ERROR', payload: 'Can not log in' })
       });
   }
 

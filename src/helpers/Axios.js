@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_ENDPOINT,
+  baseURL: 'http://idove-backend.test',
   headers: {
-    'Accept': 'application/json',
+    'Accept': 'application/json'
   }
 });
 

@@ -29,7 +29,6 @@ export const userProfile = () => {
 export const isUserAuthenticated = () => {
   try {
     const userInfo = userData();
-    console.log('Here::', userInfo);
     if (!userInfo) return false;
     return userInfo;
   } catch (err) {
